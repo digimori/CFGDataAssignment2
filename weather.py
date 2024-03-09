@@ -1,6 +1,13 @@
 from tkinter import *
-from tkinter import ttk
+from configparser import ConfigParser
 
+api_url = 'https://api.openweathermap.org/data/2.5/weather?q={}&appid={API key}'
+
+# Parsing our API key from the text file - This will be in gitignore to protect it.
+config_file = 'config.ini'
+config = ConfigParser()
+config.read(config_file)
+api_key = config['api_key']['key']
 def search():
     pass
 
